@@ -1,16 +1,15 @@
 //create a schema
 
 //import from mongoose
-const { Schema, model, } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
-const publisherSchema (
-    {
-        name: { type: String, required: true },
-        location: { type: String, required: true },
-        url: { type: String, required: true },
-    },
-    
-    {timestanps: true}
+const publisherSchema = new Schema(
+  {
+    name: { type: String, required:true },
+    location: { type: String, required:true },
+    url: { type: String, required:true }
+  },
+  { timestamps: true }
 )
 
-module.exports = module('Publisher', publisherSchema)
+module.exports = model('Publisher', publisherSchema);

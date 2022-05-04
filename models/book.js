@@ -1,11 +1,11 @@
-const { model, Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const bookSchema = new Schema(
   {
     title: { type: String, required: true },
     author: { type: String, required: true },
     publish_date: { type: String, required: true },
-    publish_id: { type: Schema.Types.ObjectId, ref: 'Publisher', required: true },
+    publisher_id: { type: Schema.Types.ObjectId, ref: "Publisher", required: true },
   },
   { timestamps: true }
 );
